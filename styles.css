@@ -661,12 +661,36 @@ img {
   text-align: center;
   position: relative;
   box-shadow: var(--shadow-subtle);
-  transition: transform 0.3s ease;
+  transition: all 0.35s var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .step-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--accent-gold);
+  box-shadow: var(--shadow-royal);
+}
+
+.step-vector-wrapper {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step-vector-svg {
+  width: 110px;
+  height: 110px;
+  filter: drop-shadow(0 6px 14px rgba(107, 29, 47, 0.12));
+  transition: transform 0.4s var(--transition-smooth);
+}
+
+.step-card:hover .step-vector-svg {
+  transform: scale(1.08) translateY(-4px);
 }
 
 .step-number {
@@ -681,7 +705,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
   border: 2px solid var(--accent-gold);
   box-shadow: 0 4px 12px rgba(107, 29, 47, 0.2);
 }

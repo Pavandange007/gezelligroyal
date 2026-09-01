@@ -103,12 +103,12 @@ function initCalculator() {
 
   function updateCalc() {
     const count = parseInt(slider.value, 10);
-    empDisplay.textContent = `${count} Employees`;
+    empDisplay.textContent = `${count} Medewerkers`;
     
     // Formula: Avg 1.5 hours saved per employee birthday celebration setup + ordering
     const savedHours = Math.round(count * 1.5);
-    hoursDisplay.textContent = `${savedHours} Hours`;
-    treatsDisplay.textContent = `${count} Celebrations`;
+    hoursDisplay.textContent = `${savedHours} Uur`;
+    treatsDisplay.textContent = `${count} Vieringen`;
   }
 
   slider.addEventListener('input', updateCalc);
