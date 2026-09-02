@@ -35,27 +35,26 @@ git push -u origin main
 
 ---
 
-## 🌐 Connecting Your Custom Domain
+## 🌐 Connecting Your Custom Domain (gezelligroyal.com / www.gezelligroyal.com)
 
-Since you already own your domain (e.g. `gezelligroyal.nl` or `gezelligroyal.com`):
+### 1. CNAME File
+The `CNAME` file in this repository is set to:
+```
+www.gezelligroyal.com
+```
 
-### 1. Update the `CNAME` file
-Open the `CNAME` file in this repository and replace `gezelligroyal.nl` with your exact domain name (e.g. `gezelligroyal.nl` or `www.gezelligroyal.nl`).
+### 2. DNS Settings in Hostinger
+Add the following DNS records in Hostinger DNS Zone Manager:
 
-### 2. Configure DNS Settings at Your Domain Provider
-Log in to your domain provider (e.g. TransIP, MijnDomein, Hostinger, GoDaddy, Namecheap) and add the following DNS records:
+#### A Records (For apex domain `gezelligroyal.com`):
+- **Type**: `A` | **Name**: `@` | **Points to**: `185.199.108.153`
+- **Type**: `A` | **Name**: `@` | **Points to**: `185.199.109.153`
+- **Type**: `A` | **Name**: `@` | **Points to**: `185.199.110.153`
+- **Type**: `A` | **Name**: `@` | **Points to**: `185.199.111.153`
 
-#### For Root Domain (`gezelligroyal.nl`):
-Add **A Records** pointing to GitHub Pages IP addresses:
-- `185.199.108.153`
-- `185.199.109.153`
-- `185.199.110.153`
-- `185.199.111.153`
+#### CNAME Record (For `www.gezelligroyal.com`):
+- **Type**: `CNAME` | **Name**: `www` | **Points to**: `pavandange007.github.io`
 
-#### For Subdomain / `www` (`www.gezelligroyal.nl`):
-Add a **CNAME Record**:
-- **Host**: `www`
-- **Target/Value**: `YOUR-USERNAME.github.io`
 
 ### 3. Enforce HTTPS on GitHub
 In your GitHub Repo **Settings** -> **Pages**:
